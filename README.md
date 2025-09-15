@@ -5,7 +5,7 @@
 - [3. Preprocesamiento de las imagenes](#3-preprocesamiento-de-las-imagenes)
 - [4. Modelamiento](#4-modelamiento)
   - [4.1. Modelo base (InceptionResNetV2)](#41-modelo-base-inceptionresnetv2)
-  - [4.1.2 Nueva “cabeza” de clasificación](#412-nueva-cabeza-de-clasificación)
+  - [4.2 Nueva “cabeza” de clasificación](#42-nueva-cabeza-de-clasificación)
   - [4.3. Compilación](#43-compilación)
 - [Resultados](#resultados)
 
@@ -17,14 +17,21 @@ Clone el repositorio:
 git clone [url]
 ```
 
-Ubique en el directorio de trabajo
+Ubíquese en el directorio de trabajo
 ```bash
 cd RETO-MICROSCOPIA
 ```
 
-Descargue y descomprima la carpeta `data.zip` del siguiente [enlace](https://drive.google.com/file/d/1vHpktP4M3uQOoh_QlBAqcvC111o8e5ef/view).
-
-
+Descargue y descomprima la carpeta `data.zip` del siguiente [enlace](https://drive.google.com/file/d/1vHpktP4M3uQOoh_QlBAqcvC111o8e5ef/view). Debería quedar con la siguiente estructura de directorios:
+```
+RETO-MICROSCOPIA
+|_data
+|___Fold1
+|___Fold2
+|_src
+|___Reto.ipynb
+|_figs
+```
 Ejecute el notebook ubicado en `src/Reto.ipynb`.
 Este notebook contiene la preparación, el preprocesamiento de las imagenes y el modelamiento.
 
@@ -78,7 +85,7 @@ for layer in base_model.layers:
 * Solo se entrena la nueva “cabeza” que agregamos después.
 
 
-## 4.1.2 Nueva “cabeza” de clasificación
+## 4.2 Nueva “cabeza” de clasificación
 
 ```python
 transfer_learning_model = Sequential(
